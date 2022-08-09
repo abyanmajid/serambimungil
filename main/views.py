@@ -1,19 +1,25 @@
 from django.shortcuts import render, HttpResponse
 
 def home(response):
-    return HttpResponse('home')
+    context = {}
+    return render(response, 'main/home.html', context)
 
 def products(response):
-    return HttpResponse('products')
+    context = {}
+    return render(response, 'main/all_products.html', context)
 
 def regular(response):
-    return HttpResponse('regular')
+    context = {}
+    return render(response, 'main/products_by_category.html', context)
 
 def seasonal(response):
-    return HttpResponse('seasonal')
+    context = {}
+    return render(response, 'main/products_by_category.html', context)
 
 def about(response):
-    return HttpResponse('about')
+    context = {}
+    return render(response, 'main/about.html', context)
 
 def contact(response):
-    return HttpResponse('contact')
+    context = {}
+    return render(response, 'main/contact.html', context)

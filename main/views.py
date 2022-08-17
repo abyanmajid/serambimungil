@@ -4,17 +4,9 @@ def home(response):
     context = {}
     return render(response, 'main/home.html', context)
 
-def products(response):
+def menu(response):
     context = {}
-    return render(response, 'main/all_products.html', context)
-
-def regular(response):
-    context = {}
-    return render(response, 'main/products_by_category.html', context)
-
-def seasonal(response):
-    context = {}
-    return render(response, 'main/products_by_category.html', context)
+    return render(response, 'main/menu.html', context)
 
 def about(response):
     context = {}

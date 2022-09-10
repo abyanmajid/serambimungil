@@ -1,3 +1,4 @@
+
 /*
 Color Pallete
 
@@ -20,7 +21,7 @@ Black = #141414
 .jumbotron {
     color: #FFFFFF;
     height: 90vh;
-    background-image: url('../static/1920x900.png');
+    /* background-image: url('../main/1920x900.png'); */
     background-size: cover;
     background-position: cover;
     border-radius: 0px!important

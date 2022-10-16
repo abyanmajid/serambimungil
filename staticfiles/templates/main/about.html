@@ -1,14 +1,34 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
-{% block title %}About{% endblock %}
+{% block title %}| About{% endblock %}
 
-{% block home_jumbotron %}{% endblock %}
+{% block navlinks%}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'home' %}"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp; Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'menu' %}">Menu</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+  </li>
+{% endblock %}
 
 {% block content %}
-<h1>about page</h1>
-<h1>about page</h1>
-<h1>about page</h1>
-<h1>about page</h1>
-<h1>about page</h1>
-<h1>about page</h1>
+<!-- Header -->
+<header class="masthead">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="{% static 'main/serambimungil-avatar.png' %}" alt="">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="masthead-subheading" style="font-size: 2.5rem; text-align: left;">Serambi Mungil</h1>
+                <!-- 9 lines for large screen -->
+                <p class="masthead-subheading" style="font-size: 1.25rem; text-align: left;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, voluptas commodi, minima aut reiciendis esse beatae pariatur, debitis tempore eum eligendi accusantium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, voluptas commodi, minima aut reiciendis esse beatae pariatur, debitis tempore eum eligendi accusantium. Dolores quaerat at nostrum excepturi, temporibus hic dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, voluptas commodi, minima aut reiciendis esse beatae pariatur, debitis tempore eum eligendi accusantium.</p>
+            </div>
+        </div>
+    </div>
+</header>
 {% endblock %}

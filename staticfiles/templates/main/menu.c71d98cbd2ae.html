@@ -1,0 +1,179 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}| Menu{% endblock %}
+
+{% block navlinks%}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'home' %}"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp; Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'about' %}">About</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+  </li>
+{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<header class="masthead">
+    <div class="container">
+      <div class="masthead-subheading" style="font-size: 4rem;">Menu</div>
+      <br>
+      <br>
+      <div class="input-group">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+        <button type="button" class="btn btn-primary btn-lg">
+            <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+</header>
+
+<!-- Products Grid-->
+<section class="page-section bg-light" id="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <!-- Featured Product 1 -->
+          <div class="portfolio-item">
+            <a
+              class="portfolio-link"
+              data-bs-toggle="modal"
+              href="#portfolioModal1"
+            >
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'main/menu/1.jpg' %}" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">1</div>
+              <div class="portfolio-caption-subheading text-muted">
+                desc
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <!-- Featured Product 2 -->
+          <div class="portfolio-item">
+            <a
+              class="portfolio-link"
+              data-bs-toggle="modal"
+              href="#portfolioModal2"
+            >
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'main/menu/2.jpg' %}" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">2</div>
+              <div class="portfolio-caption-subheading text-muted">
+                desc
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <!-- Featured Product 3 -->
+          <div class="portfolio-item">
+            <a
+              class="portfolio-link"
+              data-bs-toggle="modal"
+              href="#portfolioModal3"
+            >
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'main/menu/3.jpg' %}" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">3</div>
+              <div class="portfolio-caption-subheading text-muted">
+                desc
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+          <!-- Featured Product 4-->
+          <div class="portfolio-item">
+            <a
+              class="portfolio-link"
+              data-bs-toggle="modal"
+              href="#portfolioModal4"
+            >
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'main/menu/4.jpg' %}" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">4</div>
+              <div class="portfolio-caption-subheading text-muted">
+                desc
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+          <!-- Featured Product 5-->
+          <div class="portfolio-item">
+            <a
+              class="portfolio-link"
+              data-bs-toggle="modal"
+              href="#portfolioModal5"
+            >
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'main/menu/5.jpg' %}" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">5</div>
+              <div class="portfolio-caption-subheading text-muted">
+                desc
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <!-- Featured Product 6 -->
+          <div class="portfolio-item">
+            <a
+              class="portfolio-link"
+              data-bs-toggle="modal"
+              href="#portfolioModal6"
+            >
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'main/menu/6.jpg' %}" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">6</div>
+              <div class="portfolio-caption-subheading text-muted">
+                desc
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

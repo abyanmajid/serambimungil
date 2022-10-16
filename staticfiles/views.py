@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 def home(response):
     context = {}
@@ -15,3 +15,6 @@ def about(response):
 def contact(response):
     context = {}
     return render(response, 'main/contact.html', context)
+
+
+

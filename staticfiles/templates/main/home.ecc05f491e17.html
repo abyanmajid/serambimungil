@@ -1,0 +1,739 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container">
+      <div class="masthead-heading text-uppercase">
+        <img src="{% static 'main/serambimungil-avatar.png' %}" alt="">
+      </div>
+      <div class="masthead-subheading">Freshly baked sweet & savoury goods</div>
+      <a class="btn btn-primary btn-xl text-uppercase" href="#services"
+        ></i>Browse Menu&nbsp; <i class="fa fa-search" aria-hidden="true"></i></a
+      >
+    </div>
+  </header>
+  <!-- Services-->
+  <section class="page-section" id="services">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">qualities</h2>
+        <h3 class="section-subheading text-muted">
+          ━━━━━━━━━━━━━━━━━━━━
+        </h3>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="my-3">1</h4>
+          <p class="text-muted">
+            description
+          </p>
+        </div>
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-search fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="my-3">2</h4>
+          <p class="text-muted">
+            description
+          </p>
+        </div>
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="my-3">3</h4>
+          <p class="text-muted">
+            description
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Chatbot -->
+  <section style="background-color: #eee;">
+    <div class="container py-5">
+  
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-8 col-lg-6 col-xl-4">
+  
+          <!-- Buttons trigger collapse -->
+          <a class="btn btn-info btn-lg btn-block" data-mdb-toggle="collapse" href="#collapseExample"
+            role="button" aria-expanded="false" aria-controls="collapseExample">
+            <div class="d-flex justify-content-between align-items-center">
+              <span>Collapsible Chat App</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </a>
+  
+          <!-- Collapsed content -->
+          <div class="collapse mt-3" id="collapseExample">
+            <div class="card" id="chat4">
+              <div class="card-body" data-mdb-perfect-scrollbar="true"
+                style="position: relative; height: 400px">
+  
+                <div class="d-flex flex-row justify-content-start">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
+                    alt="avatar 1" style="width: 45px; height: 100%;">
+                  <div>
+                    <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Hi</p>
+                    <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">How are you
+                      ...???</p>
+                    <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">What are you
+                      doing
+                      tomorrow? Can we come up a bar?</p>
+                    <p class="small ms-3 mb-3 rounded-3 text-muted">23:58</p>
+                  </div>
+                </div>
+  
+                <div class="divider d-flex align-items-center mb-4">
+                  <p class="text-center mx-3 mb-0" style="color: #a2aab7;">Today</p>
+                </div>
+  
+                <div class="d-flex flex-row justify-content-end mb-4 pt-1">
+                  <div>
+                    <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-info">Hiii, I'm good.</p>
+                    <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-info">How are you doing?</p>
+                    <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-info">Long time no see! Tomorrow
+                      office. will
+                      be free on sunday.</p>
+                    <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end">00:06</p>
+                  </div>
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                    alt="avatar 1" style="width: 45px; height: 100%;">
+                </div>
+  
+                <div class="d-flex flex-row justify-content-start mb-4">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
+                    alt="avatar 1" style="width: 45px; height: 100%;">
+                  <div>
+                    <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Okay</p>
+                    <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">We will go on
+                      Sunday?</p>
+                    <p class="small ms-3 mb-3 rounded-3 text-muted">00:07</p>
+                  </div>
+                </div>
+  
+                <div class="d-flex flex-row justify-content-end mb-4">
+                  <div>
+                    <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-info">That's awesome!</p>
+                    <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-info">I will meet you Sandon Square
+                      sharp at
+                      10 AM</p>
+                    <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-info">Is that okay?</p>
+                    <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end">00:09</p>
+                  </div>
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                    alt="avatar 1" style="width: 45px; height: 100%;">
+                </div>
+  
+                <div class="d-flex flex-row justify-content-start mb-4">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
+                    alt="avatar 1" style="width: 45px; height: 100%;">
+                  <div>
+                    <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Okay i will meet
+                      you on
+                      Sandon Square</p>
+                    <p class="small ms-3 mb-3 rounded-3 text-muted">00:11</p>
+                  </div>
+                </div>
+  
+                <div class="d-flex flex-row justify-content-end mb-4">
+                  <div>
+                    <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-info">Do you have pictures of Matley
+                      Marriage?</p>
+                    <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end">00:11</p>
+                  </div>
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                    alt="avatar 1" style="width: 45px; height: 100%;">
+                </div>
+  
+                <div class="d-flex flex-row justify-content-start mb-4">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
+                    alt="avatar 1" style="width: 45px; height: 100%;">
+                  <div>
+                    <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Sorry I don't
+                      have. i
+                      changed my phone.</p>
+                    <p class="small ms-3 mb-3 rounded-3 text-muted">00:13</p>
+                  </div>
+                </div>
+  
+                <div class="d-flex flex-row justify-content-end">
+                  <div>
+                    <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-info">Okay then see you on sunday!!
+                    </p>
+                    <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end">00:15</p>
+                  </div>
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                    alt="avatar 1" style="width: 45px; height: 100%;">
+                </div>
+  
+              </div>
+              <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
+                  alt="avatar 3" style="width: 40px; height: 100%;">
+                <input type="text" class="form-control form-control-lg" id="exampleFormControlInput3"
+                  placeholder="Type message">
+                <a class="ms-1 text-muted" href="#!"><i class="fas fa-paperclip"></i></a>
+                <a class="ms-3 text-muted" href="#!"><i class="fas fa-smile"></i></a>
+                <a class="ms-3 link-info" href="#!"><i class="fas fa-paper-plane"></i></a>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  <!-- Products Grid-->
+  <section class="page-section bg-light" id="portfolio">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">Best Sellers</h2>
+        <h3 class="section-subheading text-muted">
+          ━━━━━━━━━━━━━━━━━━━━
+        </h3>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <!-- Featured Product 1 -->
+          <div class="portfolio-item">
+            <a
+              class="portfolio-link"
+              data-bs-toggle="modal"
+              href="#portfolioModal1"
+            >
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'main/menu/1.jpg' %}" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">1</div>
+              <div class="portfolio-caption-subheading text-muted">
+                desc
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <!-- Featured Product 2 -->
+          <div class="portfolio-item">
+            <a
+              class="portfolio-link"
+              data-bs-toggle="modal"
+              href="#portfolioModal2"
+            >
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'main/menu/2.jpg' %}" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">2</div>
+              <div class="portfolio-caption-subheading text-muted">
+                desc
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <!-- Featured Product 3 -->
+          <div class="portfolio-item">
+            <a
+              class="portfolio-link"
+              data-bs-toggle="modal"
+              href="#portfolioModal3"
+            >
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'main/menu/3.jpg' %}" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">3</div>
+              <div class="portfolio-caption-subheading text-muted">
+                desc
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+          <!-- Featured Product 4-->
+          <div class="portfolio-item">
+            <a
+              class="portfolio-link"
+              data-bs-toggle="modal"
+              href="#portfolioModal4"
+            >
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'main/menu/4.jpg' %}" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">4</div>
+              <div class="portfolio-caption-subheading text-muted">
+                desc
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+          <!-- Featured Product 5-->
+          <div class="portfolio-item">
+            <a
+              class="portfolio-link"
+              data-bs-toggle="modal"
+              href="#portfolioModal5"
+            >
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'main/menu/5.jpg' %}" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">5</div>
+              <div class="portfolio-caption-subheading text-muted">
+                desc
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <!-- Featured Product 6 -->
+          <div class="portfolio-item">
+            <a
+              class="portfolio-link"
+              data-bs-toggle="modal"
+              href="#portfolioModal6"
+            >
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static 'main/menu/6.jpg' %}" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">6</div>
+              <div class="portfolio-caption-subheading text-muted">
+                desc
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacts -->
+  <section class="page-section bg-light" id="team">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">CONTACT US</h2>
+        <h3 class="section-subheading text-muted">
+          ━━━━━━━━━━━━━━━━━━━━
+        </h3>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="{% static 'main/serambimungil-avatar.png' %}" alt="..." />
+            <h4>Serambi Mungil</h4>
+            <p class="text-muted">Official Social Medias</p>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Parveen Anand Facebook Profile"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Parveen Anand LinkedIn Profile"
+              ><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="{% static 'main/blank-profile-picture.png' %}" alt="..." />
+            <h4>Fitri Mutiarawati</h4>
+            <p class="text-muted">Founder & CEO</p>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Diana Petersen LinkedIn Profile"
+              ><i class="fa fa-instagram" aria-hidden="true"></i></i
+            ></a>
+            <a
+            class="btn btn-dark btn-social mx-2"
+            href="#!"
+            aria-label="Diana Petersen Facebook Profile"
+            ><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <a class="btn btn-primary btn-lg" href="{% url 'contact' %}"
+          ></i>Get in Touch&nbsp; <i class="fa fa-envelope" aria-hidden="true"></i></a
+        >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Popups -->
+  <!-- Featured Product 1 Popup -->
+  <div
+    class="portfolio-modal modal fade"
+    id="portfolioModal1"
+    tabindex="-1"
+    role="dialog"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-bs-dismiss="modal">
+          <img src="" alt="Close modal" />
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="modal-body">
+                <!-- Product details-->
+                <h2 class="text-uppercase">Project Name</h2>
+                <p class="item-intro text-muted">
+                  Lorem ipsum dolor sit amet consectetur.
+                </p>
+                <img class="img-fluid d-block mx-auto" src="" alt="..." />
+                <p>
+                  Use this area to describe your project. Lorem ipsum dolor
+                  sit amet, consectetur adipisicing elit. Est blanditiis
+                  dolorem culpa incidunt minus dignissimos deserunt repellat
+                  aperiam quasi sunt officia expedita beatae cupiditate,
+                  maiores repudiandae, nostrum, reiciendis facere nemo!
+                </p>
+                <ul class="list-inline">
+                  <li>
+                    <strong>Client:</strong>
+                    Threads
+                  </li>
+                  <li>
+                    <strong>Category:</strong>
+                    Illustration
+                  </li>
+                </ul>
+                <button
+                  class="btn btn-primary btn-xl text-uppercase"
+                  data-bs-dismiss="modal"
+                  type="button"
+                >
+                  <i class="fas fa-xmark me-1"></i>
+                  Close Project
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Featured Product 2 Popup -->
+  <div
+    class="portfolio-modal modal fade"
+    id="portfolioModal2"
+    tabindex="-1"
+    role="dialog"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-bs-dismiss="modal">
+          <img src="" alt="Close modal" />
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="modal-body">
+                <!-- Product details-->
+                <h2 class="text-uppercase">Project Name</h2>
+                <p class="item-intro text-muted">
+                  Lorem ipsum dolor sit amet consectetur.
+                </p>
+                <img class="img-fluid d-block mx-auto" src="" alt="..." />
+                <p>
+                  Use this area to describe your project. Lorem ipsum dolor
+                  sit amet, consectetur adipisicing elit. Est blanditiis
+                  dolorem culpa incidunt minus dignissimos deserunt repellat
+                  aperiam quasi sunt officia expedita beatae cupiditate,
+                  maiores repudiandae, nostrum, reiciendis facere nemo!
+                </p>
+                <ul class="list-inline">
+                  <li>
+                    <strong>Client:</strong>
+                    Explore
+                  </li>
+                  <li>
+                    <strong>Category:</strong>
+                    Graphic Design
+                  </li>
+                </ul>
+                <button
+                  class="btn btn-primary btn-xl text-uppercase"
+                  data-bs-dismiss="modal"
+                  type="button"
+                >
+                  <i class="fas fa-xmark me-1"></i>
+                  Close Project
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Featured Product 3 Popup -->
+  <div
+    class="portfolio-modal modal fade"
+    id="portfolioModal3"
+    tabindex="-1"
+    role="dialog"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-bs-dismiss="modal">
+          <img src="" alt="Close modal" />
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="modal-body">
+                <!-- Product details-->
+                <h2 class="text-uppercase">Project Name</h2>
+                <p class="item-intro text-muted">
+                  Lorem ipsum dolor sit amet consectetur.
+                </p>
+                <img class="img-fluid d-block mx-auto" src="" alt="..." />
+                <p>
+                  Use this area to describe your project. Lorem ipsum dolor
+                  sit amet, consectetur adipisicing elit. Est blanditiis
+                  dolorem culpa incidunt minus dignissimos deserunt repellat
+                  aperiam quasi sunt officia expedita beatae cupiditate,
+                  maiores repudiandae, nostrum, reiciendis facere nemo!
+                </p>
+                <ul class="list-inline">
+                  <li>
+                    <strong>Client:</strong>
+                    Finish
+                  </li>
+                  <li>
+                    <strong>Category:</strong>
+                    Identity
+                  </li>
+                </ul>
+                <button
+                  class="btn btn-primary btn-xl text-uppercase"
+                  data-bs-dismiss="modal"
+                  type="button"
+                >
+                  <i class="fas fa-xmark me-1"></i>
+                  Close Project
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Featured Product 4 Popup -->
+  <div
+    class="portfolio-modal modal fade"
+    id="portfolioModal4"
+    tabindex="-1"
+    role="dialog"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-bs-dismiss="modal">
+          <img src="" alt="Close modal" />
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="modal-body">
+                <!-- Product details-->
+                <h2 class="text-uppercase">Project Name</h2>
+                <p class="item-intro text-muted">
+                  Lorem ipsum dolor sit amet consectetur.
+                </p>
+                <img class="img-fluid d-block mx-auto" src="" alt="..." />
+                <p>
+                  Use this area to describe your project. Lorem ipsum dolor
+                  sit amet, consectetur adipisicing elit. Est blanditiis
+                  dolorem culpa incidunt minus dignissimos deserunt repellat
+                  aperiam quasi sunt officia expedita beatae cupiditate,
+                  maiores repudiandae, nostrum, reiciendis facere nemo!
+                </p>
+                <ul class="list-inline">
+                  <li>
+                    <strong>Client:</strong>
+                    Lines
+                  </li>
+                  <li>
+                    <strong>Category:</strong>
+                    Branding
+                  </li>
+                </ul>
+                <button
+                  class="btn btn-primary btn-xl text-uppercase"
+                  data-bs-dismiss="modal"
+                  type="button"
+                >
+                  <i class="fas fa-xmark me-1"></i>
+                  Close Project
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Featured Product 5 Popup -->
+  <div
+    class="portfolio-modal modal fade"
+    id="portfolioModal5"
+    tabindex="-1"
+    role="dialog"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-bs-dismiss="modal">
+          <img src="" alt="Close modal" />
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="modal-body">
+                <!-- Product details-->
+                <h2 class="text-uppercase">Project Name</h2>
+                <p class="item-intro text-muted">
+                  Lorem ipsum dolor sit amet consectetur.
+                </p>
+                <img class="img-fluid d-block mx-auto" src="" alt="..." />
+                <p>
+                  Use this area to describe your project. Lorem ipsum dolor
+                  sit amet, consectetur adipisicing elit. Est blanditiis
+                  dolorem culpa incidunt minus dignissimos deserunt repellat
+                  aperiam quasi sunt officia expedita beatae cupiditate,
+                  maiores repudiandae, nostrum, reiciendis facere nemo!
+                </p>
+                <ul class="list-inline">
+                  <li>
+                    <strong>Client:</strong>
+                    Southwest
+                  </li>
+                  <li>
+                    <strong>Category:</strong>
+                    Website Design
+                  </li>
+                </ul>
+                <button
+                  class="btn btn-primary btn-xl text-uppercase"
+                  data-bs-dismiss="modal"
+                  type="button"
+                >
+                  <i class="fas fa-xmark me-1"></i>
+                  Close Project
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Featured Product 6 Popup -->
+  <div
+    class="portfolio-modal modal fade"
+    id="portfolioModal6"
+    tabindex="-1"
+    role="dialog"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-bs-dismiss="modal">
+          <img src="" alt="Close modal" />
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="modal-body">
+                <!-- Product details-->
+                <h2 class="text-uppercase">Project Name</h2>
+                <p class="item-intro text-muted">
+                  Lorem ipsum dolor sit amet consectetur.
+                </p>
+                <img class="img-fluid d-block mx-auto" src="" alt="..." />
+                <p>
+                  Use this area to describe your project. Lorem ipsum dolor
+                  sit amet, consectetur adipisicing elit. Est blanditiis
+                  dolorem culpa incidunt minus dignissimos deserunt repellat
+                  aperiam quasi sunt officia expedita beatae cupiditate,
+                  maiores repudiandae, nostrum, reiciendis facere nemo!
+                </p>
+                <ul class="list-inline">
+                  <li>
+                    <strong>Client:</strong>
+                    Window
+                  </li>
+                  <li>
+                    <strong>Category:</strong>
+                    Photography
+                  </li>
+                </ul>
+                <button
+                  class="btn btn-primary btn-xl text-uppercase"
+                  data-bs-dismiss="modal"
+                  type="button"
+                >
+                  <i class="fas fa-xmark me-1"></i>
+                  Close Project
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

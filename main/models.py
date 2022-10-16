@@ -1,6 +1,4 @@
-from itertools import product
 from django.db import models
-from PIL import Image
 
 class Product(models.Model):
     product_name = models.CharField(max_length=25)
@@ -10,15 +8,3 @@ class Product(models.Model):
     
     def __str__(self):
         return self.product_name
-    
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-        
-        if self.product_image:
-            img = Image.open(self.product_image.path)
-            
-            if img.width > 600 or img.height > 450 or img.width < 600 or img.height < 450:
-                output_size = (600, 450)
-                img.thumbnail(output_size)
-            
-            img.save(self.product_image.path)

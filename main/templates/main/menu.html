@@ -34,159 +34,40 @@
  <!-- Featured Products -->
  <section class="page-section bg-light" id="portfolio">
     <div class="container">
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase">Best Sellers</h2>
-        <h3 class="section-subheading text-muted">
-          ━━━━━━━━━━━━━━━━━━━━
-        </h3>
-      </div>
       <div class="row">
-        <div class="col-lg-4 col-sm-6 mb-4">
           <!-- Featured Product 1 -->
+{% for product in products %}
+          <div class="col-lg-4 col-sm-6 mb-4">
           <div class="portfolio-item">
             <a
               class="portfolio-link"
               data-bs-toggle="modal"
-              href="#portfolioModal1"
+              href="#portfolioModal{{ product.id }}"
             >
               <div class="portfolio-hover">
                 <div class="portfolio-hover-content">
                   <i class="fas fa-search fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
+              {% if product.product_image %}
+                <img class="img-fluid" src="{{ product.product_image.url }}" alt="..." />
+              {% else %}
+                <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
+              {% endif %}
             </a>
             <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">1</div>
+              <div class="portfolio-caption-heading">{{ product.product_name }}</div>
               <div class="portfolio-caption-subheading text-muted">
-                desc
+                {{ product.product_type }}
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <!-- Featured Product 2 -->
-          <div class="portfolio-item">
-            <a
-              class="portfolio-link"
-              data-bs-toggle="modal"
-              href="#portfolioModal2"
-            >
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-search fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">2</div>
-              <div class="portfolio-caption-subheading text-muted">
-                desc
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <!-- Featured Product 3 -->
-          <div class="portfolio-item">
-            <a
-              class="portfolio-link"
-              data-bs-toggle="modal"
-              href="#portfolioModal3"
-            >
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-search fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">3</div>
-              <div class="portfolio-caption-subheading text-muted">
-                desc
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-          <!-- Featured Product 4-->
-          <div class="portfolio-item">
-            <a
-              class="portfolio-link"
-              data-bs-toggle="modal"
-              href="#portfolioModal4"
-            >
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-search fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">4</div>
-              <div class="portfolio-caption-subheading text-muted">
-                desc
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-          <!-- Featured Product 5-->
-          <div class="portfolio-item">
-            <a
-              class="portfolio-link"
-              data-bs-toggle="modal"
-              href="#portfolioModal5"
-            >
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-search fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">5</div>
-              <div class="portfolio-caption-subheading text-muted">
-                desc
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <!-- Featured Product 6 -->
-          <div class="portfolio-item">
-            <a
-              class="portfolio-link"
-              data-bs-toggle="modal"
-              href="#portfolioModal6"
-            >
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-search fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">6</div>
-              <div class="portfolio-caption-subheading text-muted">
-                desc
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Product Popups -->
   <div
     class="portfolio-modal modal fade"
-    id="portfolioModal1"
+    id="portfolioModal{{ product.id }}"
     tabindex="-1"
     role="dialog"
     aria-hidden="true"
@@ -194,24 +75,24 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="close-modal" data-bs-dismiss="modal">
-          <img src="" alt="Close modal" />
+          <img src="" alt="Exit" />
         </div>
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-8">
               <div class="modal-body">
                 <!-- Product details-->
-                <h2 class="text-uppercase">Name</h2>
+                <h2 class="text-uppercase">{{ product.product_name }}</h2>
                 <p class="item-intro text-muted">
-                  Lorem ipsum dolor sit amet consectetur.
+                  {{ product.product_type }}
                 </p>
-                <img class="img-fluid d-block mx-auto" src="" alt="..." />
+                {% if product.product_image %}
+                    <img class="img-fluid" src="{{ product.product_image.url }}" alt="..." />
+                {% else %}
+                    <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
+                {% endif %}
                 <p>
-                  Use this area to describe your project. Lorem ipsum dolor
-                  sit amet, consectetur adipisicing elit. Est blanditiis
-                  dolorem culpa incidunt minus dignissimos deserunt repellat
-                  aperiam quasi sunt officia expedita beatae cupiditate,
-                  maiores repudiandae, nostrum, reiciendis facere nemo!
+                  {{ product.product_description }}
                 </p>
                 <button
                   class="btn btn-primary btn-xl text-uppercase"
@@ -228,229 +109,6 @@
       </div>
     </div>
   </div>
-  <!-- Featured Product 2 Popup -->
-  <div
-    class="portfolio-modal modal fade"
-    id="portfolioModal2"
-    tabindex="-1"
-    role="dialog"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-bs-dismiss="modal">
-          <img src="" alt="Close modal" />
-        </div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="modal-body">
-                <!-- Product details-->
-                <h2 class="text-uppercase">Name</h2>
-                <p class="item-intro text-muted">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <img class="img-fluid d-block mx-auto" src="" alt="..." />
-                <p>
-                  Use this area to describe your project. Lorem ipsum dolor
-                  sit amet, consectetur adipisicing elit. Est blanditiis
-                  dolorem culpa incidunt minus dignissimos deserunt repellat
-                  aperiam quasi sunt officia expedita beatae cupiditate,
-                  maiores repudiandae, nostrum, reiciendis facere nemo!
-                </p>
-                <button
-                  class="btn btn-primary btn-xl text-uppercase"
-                  data-bs-dismiss="modal"
-                  type="button"
-                >
-                  <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;
-                  Go Back
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Featured Product 3 Popup -->
-  <div
-    class="portfolio-modal modal fade"
-    id="portfolioModal3"
-    tabindex="-1"
-    role="dialog"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-bs-dismiss="modal">
-          <img src="" alt="Close modal" />
-        </div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="modal-body">
-                <!-- Product details-->
-                <h2 class="text-uppercase">Name</h2>
-                <p class="item-intro text-muted">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <img class="img-fluid d-block mx-auto" src="" alt="..." />
-                <p>
-                  Use this area to describe your project. Lorem ipsum dolor
-                  sit amet, consectetur adipisicing elit. Est blanditiis
-                  dolorem culpa incidunt minus dignissimos deserunt repellat
-                  aperiam quasi sunt officia expedita beatae cupiditate,
-                  maiores repudiandae, nostrum, reiciendis facere nemo!
-                </p>
-                <button
-                  class="btn btn-primary btn-xl text-uppercase"
-                  data-bs-dismiss="modal"
-                  type="button"
-                >
-                  <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;
-                  Go Back
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Featured Product 4 Popup -->
-  <div
-    class="portfolio-modal modal fade"
-    id="portfolioModal4"
-    tabindex="-1"
-    role="dialog"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-bs-dismiss="modal">
-          <img src="" alt="Close modal" />
-        </div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="modal-body">
-                <!-- Product details-->
-                <h2 class="text-uppercase">Name</h2>
-                <p class="item-intro text-muted">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <img class="img-fluid d-block mx-auto" src="" alt="..." />
-                <p>
-                  Use this area to describe your project. Lorem ipsum dolor
-                  sit amet, consectetur adipisicing elit. Est blanditiis
-                  dolorem culpa incidunt minus dignissimos deserunt repellat
-                  aperiam quasi sunt officia expedita beatae cupiditate,
-                  maiores repudiandae, nostrum, reiciendis facere nemo!
-                </p>
-                <button
-                  class="btn btn-primary btn-xl text-uppercase"
-                  data-bs-dismiss="modal"
-                  type="button"
-                >
-                  <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;
-                  Go Back
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Featured Product 5 Popup -->
-  <div
-    class="portfolio-modal modal fade"
-    id="portfolioModal5"
-    tabindex="-1"
-    role="dialog"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-bs-dismiss="modal">
-          <img src="" alt="Close modal" />
-        </div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="modal-body">
-                <!-- Product details-->
-                <h2 class="text-uppercase">Name</h2>
-                <p class="item-intro text-muted">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <img class="img-fluid d-block mx-auto" src="" alt="..." />
-                <p>
-                  Use this area to describe your project. Lorem ipsum dolor
-                  sit amet, consectetur adipisicing elit. Est blanditiis
-                  dolorem culpa incidunt minus dignissimos deserunt repellat
-                  aperiam quasi sunt officia expedita beatae cupiditate,
-                  maiores repudiandae, nostrum, reiciendis facere nemo!
-                </p>
-                <button
-                  class="btn btn-primary btn-xl text-uppercase"
-                  data-bs-dismiss="modal"
-                  type="button"
-                >
-                  <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;&nbsp;
-                  Go Back
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Featured Product 6 Popup -->
-  <div
-    class="portfolio-modal modal fade"
-    id="portfolioModal6"
-    tabindex="-1"
-    role="dialog"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-bs-dismiss="modal">
-          <img src="" alt="Close modal" />
-        </div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="modal-body">
-                <!-- Product details-->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <img class="img-fluid d-block mx-auto" src="" alt="..." />
-                <p>
-                  Use this area to describe your project. Lorem ipsum dolor
-                  sit amet, consectetur adipisicing elit. Est blanditiis
-                  dolorem culpa incidunt minus dignissimos deserunt repellat
-                  aperiam quasi sunt officia expedita beatae cupiditate,
-                  maiores repudiandae, nostrum, reiciendis facere nemo!
-                </p>
-                <button
-                  class="btn btn-primary btn-xl text-uppercase"
-                  data-bs-dismiss="modal"
-                  type="button"
-                >
-                  <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;&nbsp;
-                  Go Back
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+{% endfor %}
+
 {% endblock %}

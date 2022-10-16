@@ -1,6 +1,24 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
+{% block navlinks %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'menu' %}">Menu</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'about' %}">About</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+</li>
+<li class="nav-item">
+    <h4 style="color: white;">|</h4>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="admin/">Staff Login &nbsp;<i class="fa fa-sign-in" aria-hidden="true"></i></a>
+</li>
+{% endblock %}
+
 {% block content %}
 <!-- Masthead-->
 <header class="masthead">

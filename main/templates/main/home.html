@@ -11,12 +11,30 @@
 <li class="nav-item">
     <a class="nav-link" href="{% url 'contact' %}">Contact</a>
 </li>
+{% if user.is_authenticated %}
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'edit_home' %}">Edit Page &nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+</li>
+{% endif %}
+
 <li class="nav-item">
     <h4 style="color: white;">|</h4>
 </li>
+
+<!-- Check if User is Staff -->
+{% if user.is_authenticated %}
 <li class="nav-item">
-    <a class="nav-link" href="admin/">Staff Login &nbsp;<i class="fa fa-sign-in" aria-hidden="true"></i></a>
+  <a class="nav-link" style="color: #F7C7CE; font-weight: 750;">Hi {{ user.username }}!</a>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'logout' %}">Log Out &nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+</li>
+{% else %}
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'login' %}">Staff Login &nbsp;<i class="fa fa-sign-in" aria-hidden="true"></i></a>
+</li>
+{% endif %}
+
 {% endblock %}
 
 {% block content %}

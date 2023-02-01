@@ -1,0 +1,53 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}| Menu{% endblock %}
+
+{% block navlinks%}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'menu' %}"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp; Go Back</a>
+</li>
+{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<header class="masthead">
+    <div class="container">
+      <div class="masthead-subheading" style="font-size: 4rem;">Customize Your Home Page</div>
+    </div>
+</header>
+
+ <!-- Edit Menu Page -->
+ <section class="page-section bg-light" id="edit-home-page">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-6">
+        <!-- Add Product -->
+        <h1>Add Product</h1>
+        <form method="post">
+          {% csrf_token %}
+          {{ addproductform.as_p }}
+          <div class="form-group form-check">
+          </div>
+          <button type="submit" class="btn btn-primary">Add Product</button>
+        </form>
+        </div>
+
+        <div class="col-lg-6" style="text-align: right;">
+        <!-- Remove -->
+        <h1>Remove Product</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ removeproductform.as_p }}
+            <small>Tip: The ID of a product can be seen in its respective popup card on the menu page.</small>
+            <div class="form-group form-check">
+            </div>
+            <strong>Are you sure? This action cannot be undone! &nbsp;</strong>
+            <button type="submit" class="btn btn-primary">Delete Product</button>
+            
+        </form>
+        </div>
+    </div>
+  </div>
+{% endblock %}

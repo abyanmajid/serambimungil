@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}| About{% endblock %}
+
+{% block navlinks%}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'home' %}"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp; Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'menu' %}">Menu</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+  </li>
+{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<header class="masthead">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="{% static 'main/serambimungil-avatar.png' %}" alt="">
+            </div>
+            <div class="col-lg-6">
+                <h1 style="text-align: left;">Log In</h1>
+                <form method="post" style="text-align: left; font-size: 1.5rem;">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary" style="font-size: 1.5rem;">Log In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}

@@ -13,6 +13,11 @@
   <li class="nav-item">
     <a class="nav-link" href="{% url 'contact' %}">Contact</a>
   </li>
+  {% if user.is_authenticated %}
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'edit_about' %}">Edit Page &nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+  </li>
+  {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -24,13 +29,14 @@
                 <img src="{% static 'main/serambimungil-avatar.png' %}" alt="">
             </div>
             <div class="col-lg-6">
-                <h1 class="masthead-subheading" style="font-size: 2.5rem; text-align: left;">Serambi Mungil</h1>
+                <h1 class="masthead-subheading" style="font-size: 2.5rem; text-align: left;">{{ about_page_details.heading }}</h1>
                 <!-- 9 lines for large screen -->
                 <p class="masthead-subheading" style="font-size: 1.25rem; text-align: left;">
-                  Freshly baked sweet & savoury goods <br>
+                  {{ about_page_details.body }}
+                  <!-- Freshly baked sweet & savoury goods <br>
                   Made by <a href="https://www.instagram.com/fietiara/" style="color: #DBABA9;">@fietiara</a> <br>
                   📍 Available in Karawaci, Gading Serpong, and BSD <br>
-                  🛵 Delivery via Borzo/Paxel/Grab/Gosend etc.
+                  🛵 Delivery via Borzo/Paxel/Grab/Gosend etc. -->
                 </p>
             </div>
         </div>

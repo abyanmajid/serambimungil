@@ -13,6 +13,11 @@
   <li class="nav-item">
     <a class="nav-link" href="{% url 'contact' %}">Contact</a>
   </li>
+  {% if user.is_authenticated %}
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'edit_menu' %}">Edit Page &nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+  </li>
+  {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -86,6 +91,11 @@
                 <p>
                   {{ product.product_description }}
                 </p>
+                {% if user.is_authenticated %}
+                <p>
+                  <strong>ID: {{ product.id }}</strong><i> (Visible to Staff Only!)</i>
+                </p>
+                {% endif %}
                 <button
                   class="btn btn-primary btn-xl text-uppercase"
                   data-bs-dismiss="modal"

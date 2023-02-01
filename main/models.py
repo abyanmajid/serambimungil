@@ -55,3 +55,10 @@ class Product(models.Model):
                 img.thumbnail(output_size)
             
             img.save(self.product_image.path)
+            
+class About(models.Model):
+    heading = models.CharField(max_length=100)
+    body = models.TextField(max_length=500)
+    
+    def __str__(self):
+        return 'About'

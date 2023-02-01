@@ -2,9 +2,10 @@ from math import prod
 from django.http import Http404
 from queue import PriorityQueue
 from django.shortcuts import render
-from main.models import Product, Home
-from .forms import MottoForm, QualityForm_1, QualityForm_2, QualityForm_3, FeaturedProductForm_1, FeaturedProductForm_2, FeaturedProductForm_3
+from main.models import Product, Home, About
+from .forms import MottoForm, QualityForm_1, QualityForm_2, QualityForm_3, FeaturedProductForm_1, FeaturedProductForm_2, FeaturedProductForm_3, AddProductForm, RemoveProductForm, AboutForm
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 def home(response):
     home = Home.objects.get(id=1)
@@ -44,17 +45,18 @@ def menu(response):
     return render(response, 'main/menu.html', context)
 
 def about(response):
-    context = {}
+    about_page_details = About.objects.get(id=1)
+    context = {
+        'about_page_details': about_page_details
+    }
     return render(response, 'main/about.html', context)
 
 def contact(response):
     context = {}
     return render(response, 'main/contact.html', context)
 
-def login(response):
-    context = {}
-    return render(response, 'main/login.html', context)
-
+# +-------------------------------+ EDIT PAGES +-------------------------------+
+@login_required
 def edit_home(response):
     
     if response.method == 'POST':
@@ -140,3 +142,69 @@ def edit_home(response):
     }
     
     return render(response, 'main/edit_home.html', context)
+
+@login_required
+def edit_menu(response):
+    if response.method == 'POST':
+        # Retain Data
+        addproductform = AddProductForm(response.POST)
+        removeproductform = RemoveProductForm(response.POST)
+        
+        # ADD PRODUCT
+        if addproductform.is_valid():
+            product_name = addproductform.cleaned_data['product_name']
+            product_type = addproductform.cleaned_data['product_type']
+            product_description = addproductform.cleaned_data['product_name']
+            product_image = addproductform.cleaned_data['product_image']
+            Product.objects.create(
+                product_name = product_name,
+                product_type = product_type,
+                product_description = product_description,
+                product_image = product_image,
+            )
+            
+            return HttpResponseRedirect('/menu/')
+        
+        # REMOVE PRODUCT
+        elif removeproductform.is_valid():
+            registered_product_ids = Product.objects.all().values_list('id', flat=True)
+            entered_id = removeproductform.cleaned_data['product_id']
+            
+            if entered_id in registered_product_ids:
+                Product.objects.get(id=entered_id).delete()
+            return HttpResponseRedirect('/menu/')
+        
+    else:
+        addproductform = AddProductForm()
+        removeproductform = RemoveProductForm()
+
+    context = {
+        'addproductform': addproductform,
+        'removeproductform': removeproductform,
+    }
+    return render(response, 'main/edit_menu.html', context)
+
+@login_required
+def edit_about(response):
+    if response.method == 'POST':
+        # Retain Data
+        aboutform = AboutForm(response.POST)
+        
+        if aboutform.is_valid():
+            # Apply Changes
+            new_heading = aboutform.cleaned_data['heading']
+            new_body = aboutform.cleaned_data['body']
+            about = About.objects.get(id=1)
+            about.heading = new_heading
+            about.body = new_body
+            about.save()
+            
+            return HttpResponseRedirect('/about/')
+        
+    else:
+        aboutform = AboutForm()
+    
+    context = {
+        'aboutform': aboutform
+    }
+    return render(response, 'main/edit_about.html', context)

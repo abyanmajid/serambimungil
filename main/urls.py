@@ -8,8 +8,9 @@ urlpatterns = [
 	path('menu/', views.menu, name='menu'),
 	path('about/', views.about, name='about'),
 	path('contact/', views.contact, name='contact'),
-	path('login/', views.login, name='login'),
-	path('edit_home/', views.edit_home, name='edit'),
+	path('edit_home/', views.edit_home, name='edit_home'),
+	path('edit_about/', views.edit_about, name='edit_about'),
+	path('edit_menu/', views.edit_menu, name='edit_menu'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

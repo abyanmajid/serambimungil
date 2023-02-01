@@ -1,0 +1,110 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}| Menu{% endblock %}
+
+{% block navlinks%}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'home' %}"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp; Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'about' %}">About</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+  </li>
+{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<header class="masthead">
+    <div class="container">
+      <div class="masthead-subheading" style="font-size: 4rem;">Customize Your Home Page</div>
+    </div>
+</header>
+
+ <!-- Edit Home Page -->
+ <section class="page-section bg-light" id="edit-home-page">
+    <div class="container">
+      <div class="row">
+
+        <!-- Motto -->
+        <h1>Motto</h1>
+        <form method="post">
+          {% csrf_token %}
+          {{ mottoform.as_p }}
+          <div class="form-group form-check">
+          </div>
+          <button type="submit" class="btn btn-primary">Apply Changes</button>
+        </form>
+
+        <!-- Qualities -->
+        <h1 style="padding-top: 4rem;">Qualities</h1>
+        <h5>Quality 1</h5>
+        <form method="post">
+          <!-- Quality 1 -->
+          {% csrf_token %}
+          {{ qualityform_1.as_p }}
+          <div class="form-group form-check">
+          </div>
+          <button type="submit" class="btn btn-primary">Apply Changes</button>
+          <br>
+        </form>
+          <!-- Quality 2 -->
+        <h5 style="padding-top: 2rem;">Quality 2</h5>
+        <form method="post">
+          {% csrf_token %}
+          {{ qualityform_2.as_p }}
+          <div class="form-group form-check">
+          </div>
+          <button type="submit" class="btn btn-primary">Apply Changes</button>
+          <br>
+        </form>
+          <!-- Quality 3 -->
+        <h5 style="padding-top: 2rem;">Quality 3</h5>
+        <form method="post">
+          {% csrf_token %}
+          {{ qualityform_3.as_p }}
+          <div class="form-group form-check">
+          </div>
+          <button type="submit" class="btn btn-primary">Apply Changes</button>
+        </form>
+
+        <!-- Best Sellers -->
+        <h1 style="padding-top: 4rem;">Best Sellers</h1>
+        <!-- Featured Product 1 -->
+        <h5>Featured Product 1</h5>
+        <form method="post">
+          {% csrf_token %}
+          {{ featuredproductform_1.as_p }}
+          <small>Please ensure that images are sized 600x450 for best layout preservation!</small>
+          <div class="form-group form-check">
+          </div>
+          <button type="submit" class="btn btn-primary">Apply Changes</button>
+        </form>
+
+        <!-- Featured Product 2 -->
+        <h5 style="padding-top: 2rem;">Featured Product 2</h5>
+        <form method="post">
+          {% csrf_token %}
+          {{ featuredproductform_2.as_p }}
+          <small>Please ensure that images are sized 600x450 for best layout preservation!</small>
+          <div class="form-group form-check">
+          </div>
+          <button type="submit" class="btn btn-primary">Apply Changes</button>
+        </form>
+
+        <!-- Featured Product 3 -->
+        <h5 style="padding-top: 2rem;">Featured Product 3</h5>
+        <form method="post">
+          {% csrf_token %}
+          {{ featuredproductform_3.as_p }}
+          <small>Please ensure that images are sized 600x450 for best layout preservation!</small>
+          <div class="form-group form-check">
+          </div>
+          <button type="submit" class="btn btn-primary">Apply Changes</button>
+        </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -26,7 +26,7 @@
       <div class="masthead-heading text-uppercase">
         <img src="{% static 'main/serambimungil-avatar.png' %}" alt="">
       </div>
-      <div class="masthead-subheading">Freshly baked sweet & savoury goods</div>
+      <div class="masthead-subheading">{{ motto }}</div>
       <a class="btn btn-primary btn-xl text-uppercase" href="{% url 'menu' %}"
         ></i>Browse Menu&nbsp; <i class="fa fa-search" aria-hidden="true"></i></a
       >
@@ -36,7 +36,7 @@
   <section class="page-section" id="services">
     <div class="container">
       <div class="text-center">
-        <h2 class="section-heading text-uppercase">qualities</h2>
+        <h2 class="section-heading text-uppercase">A Sweet Way To Start Your Day!</h2>
         <h3 class="section-subheading text-muted">
           ━━━━━━━━━━━━━━━━━━━━
         </h3>
@@ -45,31 +45,31 @@
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+            <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="my-3">1</h4>
+          <h4 class="my-3">{{ quality_1_heading }}</h4>
           <p class="text-muted">
-            description
+            {{ quality_1_caption }}
           </p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-search fa-stack-1x fa-inverse"></i>
+            <i class="fa fa-dropbox fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="my-3">2</h4>
+          <h4 class="my-3">{{ quality_2_heading }}</h4>
           <p class="text-muted">
-            description
+            {{ quality_2_caption }}
           </p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+            <i class="fa fa-birthday-cake fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="my-3">3</h4>
+          <h4 class="my-3">{{ quality_3_heading }}</h4>
           <p class="text-muted">
-            description
+            {{ quality_3_caption }}
           </p>
         </div>
       </div>
@@ -99,12 +99,16 @@
                   <i class="fas fa-search fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
+              {% if bestseller_1_image %}
+                <img class="img-fluid" src="{{ bestseller_1_image.url }}" alt="..." />
+              {% else %}
+                <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
+              {% endif %}
             </a>
             <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">1</div>
+              <div class="portfolio-caption-heading">{{ bestseller_1_name }}</div>
               <div class="portfolio-caption-subheading text-muted">
-                desc
+                {{ bestseller_1_caption }}
               </div>
             </div>
           </div>
@@ -122,12 +126,16 @@
                   <i class="fas fa-search fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
+              {% if bestseller_2_image %}
+                <img class="img-fluid" src="{{ bestseller_2_image.url }}" alt="..." />
+              {% else %}
+                <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
+              {% endif %}
             </a>
             <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">2</div>
+              <div class="portfolio-caption-heading">{{ bestseller_2_name }}</div>
               <div class="portfolio-caption-subheading text-muted">
-                desc
+                {{ bestseller_2_caption }}
               </div>
             </div>
           </div>
@@ -145,81 +153,16 @@
                   <i class="fas fa-search fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
+              {% if bestseller_3_image %}
+                <img class="img-fluid" src="{{ bestseller_3_image.url }}" alt="..." />
+              {% else %}
+                <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
+              {% endif %}
             </a>
             <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">3</div>
+              <div class="portfolio-caption-heading">{{ bestseller_3_name }}</div>
               <div class="portfolio-caption-subheading text-muted">
-                desc
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-          <!-- Featured Product 4-->
-          <div class="portfolio-item">
-            <a
-              class="portfolio-link"
-              data-bs-toggle="modal"
-              href="#portfolioModal4"
-            >
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-search fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">4</div>
-              <div class="portfolio-caption-subheading text-muted">
-                desc
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-          <!-- Featured Product 5-->
-          <div class="portfolio-item">
-            <a
-              class="portfolio-link"
-              data-bs-toggle="modal"
-              href="#portfolioModal5"
-            >
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-search fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">5</div>
-              <div class="portfolio-caption-subheading text-muted">
-                desc
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <!-- Featured Product 6 -->
-          <div class="portfolio-item">
-            <a
-              class="portfolio-link"
-              data-bs-toggle="modal"
-              href="#portfolioModal6"
-            >
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-search fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">6</div>
-              <div class="portfolio-caption-subheading text-muted">
-                desc
+                {{ bestseller_3_caption }}
               </div>
             </div>
           </div>
@@ -229,7 +172,8 @@
   </section>
 
   <!-- Contacts -->
-  <section class="page-section bg-light" id="team">
+  <section class="page-section bg-light" id="team" style="padding-top: 0;">
+    <p id="phone_number" style="display: None;">+62 0812 900 6158</p>
     <div class="container">
       <div class="text-center">
         <h2 class="section-heading text-uppercase">CONTACT US</h2>
@@ -245,13 +189,13 @@
             <p class="text-muted">Official Social Medias</p>
             <a
               class="btn btn-dark btn-social mx-2"
-              href="#!"
+              href="https://www.facebook.com/serambi.mungil/"
               aria-label="Parveen Anand Facebook Profile"
               ><i class="fab fa-facebook-f"></i
             ></a>
             <a
               class="btn btn-dark btn-social mx-2"
-              href="#!"
+              href="https://www.instagram.com/serambimungil/"
               aria-label="Parveen Anand LinkedIn Profile"
               ><i class="fa fa-instagram" aria-hidden="true"></i></a>
           </div>
@@ -263,15 +207,10 @@
             <p class="text-muted">Founder & CEO</p>
             <a
               class="btn btn-dark btn-social mx-2"
-              href="#!"
+              href="https://www.instagram.com/fietiara/"
               aria-label="Diana Petersen LinkedIn Profile"
               ><i class="fa fa-instagram" aria-hidden="true"></i></i
             ></a>
-            <a
-            class="btn btn-dark btn-social mx-2"
-            href="#!"
-            aria-label="Diana Petersen Facebook Profile"
-            ><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -304,17 +243,17 @@
             <div class="col-lg-8">
               <div class="modal-body">
                 <!-- Product details-->
-                <h2 class="text-uppercase">Name</h2>
+                <h2 class="text-uppercase">{{ bestseller_1_name }}</h2>
                 <p class="item-intro text-muted">
-                  Lorem ipsum dolor sit amet consectetur.
+                  {{ bestseller_1_caption }}
                 </p>
-                <img class="img-fluid d-block mx-auto" src="" alt="..." />
+                {% if bestseller_1_image %}
+                <img class="img-fluid" src="{{ bestseller_1_image.url }}" alt="..." />
+                {% else %}
+                <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
+                {% endif %}
                 <p>
-                  Use this area to describe your project. Lorem ipsum dolor
-                  sit amet, consectetur adipisicing elit. Est blanditiis
-                  dolorem culpa incidunt minus dignissimos deserunt repellat
-                  aperiam quasi sunt officia expedita beatae cupiditate,
-                  maiores repudiandae, nostrum, reiciendis facere nemo!
+                  {{ bestseller_1_description }}
                 </p>
                 <button
                   class="btn btn-primary btn-xl text-uppercase"
@@ -349,17 +288,17 @@
             <div class="col-lg-8">
               <div class="modal-body">
                 <!-- Product details-->
-                <h2 class="text-uppercase">Name</h2>
+                <h2 class="text-uppercase">{{ bestseller_2_name }}</h2>
                 <p class="item-intro text-muted">
-                  Lorem ipsum dolor sit amet consectetur.
+                  {{ bestseller_2_caption }}
                 </p>
-                <img class="img-fluid d-block mx-auto" src="" alt="..." />
+                {% if bestseller_2_image %}
+                <img class="img-fluid" src="{{ bestseller_2_image.url }}" alt="..." />
+                {% else %}
+                <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
+                {% endif %}
                 <p>
-                  Use this area to describe your project. Lorem ipsum dolor
-                  sit amet, consectetur adipisicing elit. Est blanditiis
-                  dolorem culpa incidunt minus dignissimos deserunt repellat
-                  aperiam quasi sunt officia expedita beatae cupiditate,
-                  maiores repudiandae, nostrum, reiciendis facere nemo!
+                  {{ bestseller_2_description }}
                 </p>
                 <button
                   class="btn btn-primary btn-xl text-uppercase"
@@ -394,17 +333,17 @@
             <div class="col-lg-8">
               <div class="modal-body">
                 <!-- Product details-->
-                <h2 class="text-uppercase">Name</h2>
+                <h2 class="text-uppercase">{{ bestseller_3_name }}</h2>
                 <p class="item-intro text-muted">
-                  Lorem ipsum dolor sit amet consectetur.
+                  {{ bestseller_3_caption }}
                 </p>
-                <img class="img-fluid d-block mx-auto" src="" alt="..." />
+                {% if bestseller_3_image %}
+                <img class="img-fluid" src="{{ bestseller_3_image.url }}" alt="..." />
+                {% else %}
+                <img class="img-fluid" src="{% static 'main/placeholder_600x450.jpg' %}" alt="..." />
+                {% endif %}
                 <p>
-                  Use this area to describe your project. Lorem ipsum dolor
-                  sit amet, consectetur adipisicing elit. Est blanditiis
-                  dolorem culpa incidunt minus dignissimos deserunt repellat
-                  aperiam quasi sunt officia expedita beatae cupiditate,
-                  maiores repudiandae, nostrum, reiciendis facere nemo!
+                  {{ bestseller_3_description }}
                 </p>
                 <button
                   class="btn btn-primary btn-xl text-uppercase"
@@ -412,141 +351,6 @@
                   type="button"
                 >
                   <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;
-                  Go Back
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Featured Product 4 Popup -->
-  <div
-    class="portfolio-modal modal fade"
-    id="portfolioModal4"
-    tabindex="-1"
-    role="dialog"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-bs-dismiss="modal">
-          <img src="" alt="Close modal" />
-        </div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="modal-body">
-                <!-- Product details-->
-                <h2 class="text-uppercase">Name</h2>
-                <p class="item-intro text-muted">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <img class="img-fluid d-block mx-auto" src="" alt="..." />
-                <p>
-                  Use this area to describe your project. Lorem ipsum dolor
-                  sit amet, consectetur adipisicing elit. Est blanditiis
-                  dolorem culpa incidunt minus dignissimos deserunt repellat
-                  aperiam quasi sunt officia expedita beatae cupiditate,
-                  maiores repudiandae, nostrum, reiciendis facere nemo!
-                </p>
-                <button
-                  class="btn btn-primary btn-xl text-uppercase"
-                  data-bs-dismiss="modal"
-                  type="button"
-                >
-                  <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;
-                  Go Back
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Featured Product 5 Popup -->
-  <div
-    class="portfolio-modal modal fade"
-    id="portfolioModal5"
-    tabindex="-1"
-    role="dialog"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-bs-dismiss="modal">
-          <img src="" alt="Close modal" />
-        </div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="modal-body">
-                <!-- Product details-->
-                <h2 class="text-uppercase">Name</h2>
-                <p class="item-intro text-muted">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <img class="img-fluid d-block mx-auto" src="" alt="..." />
-                <p>
-                  Use this area to describe your project. Lorem ipsum dolor
-                  sit amet, consectetur adipisicing elit. Est blanditiis
-                  dolorem culpa incidunt minus dignissimos deserunt repellat
-                  aperiam quasi sunt officia expedita beatae cupiditate,
-                  maiores repudiandae, nostrum, reiciendis facere nemo!
-                </p>
-                <button
-                  class="btn btn-primary btn-xl text-uppercase"
-                  data-bs-dismiss="modal"
-                  type="button"
-                >
-                  <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;&nbsp;
-                  Go Back
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Featured Product 6 Popup -->
-  <div
-    class="portfolio-modal modal fade"
-    id="portfolioModal6"
-    tabindex="-1"
-    role="dialog"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-bs-dismiss="modal">
-          <img src="" alt="Close modal" />
-        </div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="modal-body">
-                <!-- Product details-->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <img class="img-fluid d-block mx-auto" src="" alt="..." />
-                <p>
-                  Use this area to describe your project. Lorem ipsum dolor
-                  sit amet, consectetur adipisicing elit. Est blanditiis
-                  dolorem culpa incidunt minus dignissimos deserunt repellat
-                  aperiam quasi sunt officia expedita beatae cupiditate,
-                  maiores repudiandae, nostrum, reiciendis facere nemo!
-                </p>
-                <button
-                  class="btn btn-primary btn-xl text-uppercase"
-                  data-bs-dismiss="modal"
-                  type="button"
-                >
-                  <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;&nbsp;
                   Go Back
                 </button>
               </div>

@@ -1,6 +1,8 @@
 from django.contrib import admin
-from .models import Product
+from .models import Product, Home
 
-class ProductAdmin(admin.ModelAdmin):
+class Display_ID(admin.ModelAdmin):
     readonly_fields = ('id',)
-admin.site.register(Product, ProductAdmin)
+
+admin.site.register(Product, Display_ID)
+admin.site.register(Home, Display_ID)

@@ -1,4 +1,4 @@
-### [DEPRECATED] serambimungil
+### serambimungil
 "serambimungil" was a website I built using django for my IB ITGS internal assessment in 2022-early 2023.
 
 The website was hosted at <a href="www.serambimungil.com">www.serambimungil.com</a> until I shut it down on July 9, 2023.
